@@ -1,5 +1,181 @@
+body {
+  background-image: url('./background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.modal-dialog {
+  margin-left: 450px;
+}
+
+.modal-content {
+  width: 800px;
+  height: 550px;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+  border-radius: 20px;
+  margin-left: 10px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: center;
+  /* Center content horizontally */
+  align-items: center;
+  /* Center content vertically */
+  position: relative;
+  /* Required for absolute positioning of the close button */
+}
+
+.modal-header .btn-close {
+  position: absolute;
+  /* Remove it from the normal flow */
+  right: 1rem;
+  /* Adjust the distance from the right edge */
+  top: 50%;
+  /* Center vertically relative to the modal-header */
+  transform: translateY(-50%);
+  /* Center the button vertically */
+}
+
+.modal-title {
+  margin: 0;
+  /* Remove default margin */
+  text-align: center;
+  /* Ensure text is centered */
+}
+
+
+.modalInputs {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 23px;
+  color: #333;
+  margin-bottom: 10px;
+  display: inline-block;
+  width: 75%;
+  height: 80px;
+  margin: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5)
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  border-color: #0000d361;
+  border-width: 3px;
+}
+
+.cardBadge {
+  height: 30px;
+  width: 150px;
+  background-color: #4747c9;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  font-size: 15px;
+  font-family: monospace;
+}
+
+hr {
+  height: 2px;
+  background-color: #0000d3;
+  margin: 20px 0;
+}
+
+.addNotebtn {
+  background-color: rgba(255, 255, 255, 0);
+  margin-right: 30px;
+}
+
+.addNotebtn:hover .addimg {
+  opacity: 0.5;
+}
+
+.navbar {
+  background-color: #ffa846d9;
+  backdrop-filter: blur(100px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  height: 80px;
+}
+
+.alert-fixed {
+  position: fixed;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1050;
+  width: 80%;
+  max-width: 500px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.loginForm {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 70px;
+  margin-right: 90px;
+}
+
+.loginBox {
+  width: 530px;
+  height: 400px;
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+}
+
+.loginInput {
+  width: 100%;
+  height: 70px;
+  font-size: 23px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.3)
+}
+
+.confirm-dialog-overlay {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.confirm-dialog {
+  background-color: rgba(255, 255, 255, 0.808);
+  backdrop-filter: blur(50px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.confirm-dialog-buttons {
+  margin-top: 40px;
+}
+
+.confirm-dialog-buttons .btn {
+  margin: 0 20px;
+}
+
+
 .App {
   text-align: center;
+  /* background-color: #282c34; */
 }
 
 .App-logo {
@@ -24,6 +200,26 @@
   color: white;
 }
 
+
+.icons {
+  cursor: pointer;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.icons:hover {
+  opacity: 0.5;
+}
+
+.create:hover {
+  opacity: 0.8;
+}
+
+.logout:hover {
+  opacity: 0.5;
+}
+
+
 .App-link {
   color: #61dafb;
 }
@@ -32,6 +228,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
