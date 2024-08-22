@@ -34,14 +34,6 @@ const Navbar = (props) => {
                     <p className="navbar-brand mx-2" style={{ fontFamily: "cursive", fontSize: "35px", color: "black" }}>i N o t e B o o k</p>
 
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        {/* <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li className="nav-item">
-                                <Link className={`nav-link ${(location.pathname === "/Home.js") ? "active" : ""}`} aria-current="page" to="/home">Home</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className={`nav-link ${(location.pathname === "/About.js") ? "active" : ""}`} aria-current="page" to="/about">About</Link>
-                            </li>
-                        </ul> */}
                         <div className='ms-auto '>
 
                         <button type="button" className="addNotebtn btn " data-bs-toggle="modal" data-bs-target="#example1Modal" >
