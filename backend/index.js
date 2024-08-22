@@ -1,25 +1,26 @@
+require('dotenv').config({ path: './backend/.env' }); 
+const express = require('express');
 const connectToMongo = require('./db');
-const express = require('express')
-var cors = require('cors')
+const cors = require('cors');
 
-
+// Connect to MongoDB
 connectToMongo();
-const app = express()
-const port = process.env.PORT || 5000
 
-app.use(cors())
-app.use(express.json())
+const PORT = process.env.PORT || 5000;
+const app = express();
 
-//Available Routes
-app.use('/api/notes', require('./routes/notes'))
-app.use('/api/auth', require('./routes/auth'))
+app.use(cors());
+app.use(express.json());
 
+// Available Routes
+app.use('/api/notes', require('./routes/notes'));
+app.use('/api/auth', require('./routes/auth'));
 
 app.get('/', (req, res) => {
   res.send(req.body);
-  console.log(req.body)
-})
+  console.log(req.body);
+});
 
-app.listen(port, () => {
-  console.log(`iNoteBook app listening`)
-})
+app.listen(PORT, () => {
+  console.log(`iNoteBook app listening on port ${PORT}`);
+});

@@ -1,14 +1,16 @@
 const mongoose = require('mongoose');
-const mongoURI = "mongodb+srv://kumar2rudraksh:yM2zPrfYcFeAGojc@cluster0.8khdn.mongodb.net/inotebook";
 
-const connectToMongo = async () => {   
+const connectToMongo = async () => {
     try {
-        await mongoose.connect(mongoURI),
-        console.log("Connected to Mongo");
+        await mongoose.connect(process.env.DB_URI);
+        console.log(`Connected to MongoDB`);
     } catch (error) {
-        console.error("Error connecting to Mongo:", error);
+        console.error("Error connecting to MongoDB:", error);
     }
 };
 
-module.exports = connectToMongo;
+// Export the connectToMongo function
+module.exports = connectToMongo; 
+
+
  
