@@ -9,7 +9,7 @@ connectToMongo();
 const PORT = process.env.PORT || 5000;
 const app = express();
 
-const allowedOrigins = ['https://inotebook-indol.vercel.app', 'http://localhost:3000'];
+const allowedOrigins = ['https://i-notebook-eta-six.vercel.app', 'http://localhost:3000'];
 
 const corsOptions = {
   origin: function (origin, callback) {

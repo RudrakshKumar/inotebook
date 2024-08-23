@@ -61,8 +61,8 @@ router.post('/createuser',[
 
         catch(e){
             console.log(e.message);
-            res.status(500).json({success:success,error: "Some error occured"});
-        }
+            res.status(500).json({success: false, error: "Some error occurred: " + e.message});
+        }        
     }
 )
 
