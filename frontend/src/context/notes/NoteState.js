@@ -1,7 +1,10 @@
 import { useState } from "react";
 import noteContext from "./noteContext";
+import axios from "axios"
 
 const NoteState = (props) => {
+    
+    axios.defaults.withCredentials=true;
 
     const host = process.env.REACT_APP_BACKEND_URL || "http://localhost:5000";
     let notesInitial = [];
@@ -13,8 +16,8 @@ const NoteState = (props) => {
     const getNotes = async () => {
         //API Call
 
-        const response = await fetch(`${host}/api/notes/fetchnotes`, {
-            method: "GET",
+        const response = await axios.get(`${host}/api/notes/fetchnotes`, {
+            
             headers: {
                 "auth-token": localStorage.getItem('token')
             }
@@ -33,8 +36,8 @@ const NoteState = (props) => {
         //API Call
 
         try {
-            const response = await fetch(`${host}/api/notes/createnotes`, {
-                method: "POST",
+            const response = await axios.post(`${host}/api/notes/createnotes`, {
+               
                 headers: {
                     'Content-Type': 'application/json',
                     "auth-token": localStorage.getItem('token')
@@ -53,8 +56,8 @@ const NoteState = (props) => {
     const deleteNote = async (id) => {
 
         //API Call
-        await fetch(`${host}/api/notes/deletenotes/${id}`, {
-            method: "DELETE",
+        await axios.delete(`${host}/api/notes/deletenotes/${id}`, {
+           
             headers: {
                 'Content-Type': 'application/json',
                 "auth-token": localStorage.getItem('token')
@@ -68,8 +71,8 @@ const NoteState = (props) => {
     //Edit a Node
     const editNote = async (id, title, description, tag) => {
         //API Call
-        await fetch(`${host}/api/notes/updatenotes/${id}`, {
-            method: "PUT",
+        await axios.put(`${host}/api/notes/updatenotes/${id}`, {
+            
             headers: {
                 'Content-Type': 'application/json',
                 "auth-token": localStorage.getItem('token')

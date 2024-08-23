@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import inote from "./inote.png"
+import axios from 'axios'
 
 
 const Login = (props) => {
 
+    axios.defaults.withCredentials=true;
     const host = process.env.REACT_APP_BACKEND_URL || "http://localhost:5000";
     const navigate = useNavigate();
     const [credentials, setCredentials] = useState({ email: "", password: "" })
@@ -18,8 +20,8 @@ const Login = (props) => {
         e.preventDefault();
 
         try {
-            const response = await fetch(`${host}/api/auth/login`, {
-                method: "POST",
+            const response = await axios.post(`${host}/api/auth/login`, {
+                
                 headers: {
                     'Content-Type': 'application/json',
                 },

@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const Signup = (props) => {
+  axios.defaults.withCredentials=true;
 
   const host = process.env.REACT_APP_BACKEND_URL || "http://localhost:5000";
   const navigate = useNavigate();
@@ -20,8 +22,8 @@ const Signup = (props) => {
 
     else {
       try {
-        const response = await fetch(`${host}/api/auth/createuser`, {
-          method: "POST",
+        const response = await axios.post(`${host}/api/auth/createuser`, {
+          
           headers: {
             'Content-Type': 'application/json',
           },
