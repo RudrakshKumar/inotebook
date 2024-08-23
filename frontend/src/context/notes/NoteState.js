@@ -81,6 +81,7 @@ const NoteState = (props) => {
                     newNotes[index].title = title;
                     newNotes[index].description = description;
                     newNotes[index].tag = tag;
+                    newNotes[index].date = Date.now();
                     break;
                 }
             }
