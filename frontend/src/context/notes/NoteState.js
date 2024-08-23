@@ -13,6 +13,7 @@ const NoteState = (props) => {
     // Get Notes
     const getNotes = async () => {
         try {
+            
             const response = await axios.get(`${host}/api/notes/fetchnotes`, {
                 headers: {
                     "auth-token": localStorage.getItem('token'),

@@ -20,13 +20,14 @@ const corsOptions = {
     }
   },
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'auth-token'], 
   credentials: true,
   optionsSuccessStatus: 204,
   preflightContinue: false,
   maxAge: 86400,
   exposedHeaders: ['Content-Length', 'X-Kuma-Revision'],
 };
+
 
 
 app.use(cors(corsOptions));
