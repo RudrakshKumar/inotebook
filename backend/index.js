@@ -8,8 +8,18 @@ connectToMongo();
 
 const PORT = process.env.PORT || 5000;
 const app = express();
+const corsOptions = {
+  origin: 'https://inotebook-indol.vercel.app/', // Replace with your frontend URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true, // Allow cookies to be sent
+  optionsSuccessStatus: 204, // Some legacy browsers choke on 204
+  preflightContinue: false, // Pass the CORS preflight response to the next handler
+  maxAge: 86400, // Cache the preflight response for 24 hours
+  exposedHeaders: ['Content-Length', 'X-Kuma-Revision'], // Headers exposed to the browser
+};
 
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // Available Routes
