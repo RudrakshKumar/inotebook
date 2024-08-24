@@ -70,6 +70,11 @@ The app will be available at http://localhost:3000.
 
 Here is the home page of the website:
 
+![Home Page](assets/Homepage.png)
+
+
+![Notes Page](assets/Notes.png)
+
 
 ## Acknowledgements
 - MongoDB: A NoSQL database used to store user notes.
